@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生活黄页 · 花桥生活指南</title>
+<meta name="description" content="花桥生活黄页：餐饮、生活服务、教育、医疗等分类商家名录，人工核实收录，支持商家免费入驻与付费置顶。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B5D4E'/%3E%3Cpath d='M14 44c6-2 10-6 10-12s-4-10-10-12' stroke='%2312A38F' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M50 44c-6-2-10-6-10-12s4-10 10-12' stroke='%2312A38F' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='34' r='6' fill='%23EFEAE0'/%3E%3Cpath d='M32 18c-4 6-4 12 0 16 4-4 4-10 0-16z' fill='%23C98A1B'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0B5D4E"/>
+        <path d="M14 44c6-2 10-6 10-12s-4-10-10-12" stroke="#12A38F" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M50 44c-6-2-10-6-10-12s4-10 10-12" stroke="#12A38F" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="32" cy="34" r="6" fill="#EFEAE0"/>
+        <path d="M32 18c-4 6-4 12 0 16 4-4 4-10 0-16z" fill="#C98A1B"/>
+      </svg>
+      花桥生活指南
+    </a>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="commute.html">通勤攻略</a>
+      <a href="directory.html" class="active">生活黄页</a>
+      <a href="join.html">商家入驻</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker">生活黄页</div>
+    <h1>花桥本地商家名录</h1>
+    <p class="sub">按分类人工核实收录。当前展示为<strong>示例条目</strong>（数据待核验与商家入驻后替换）。付费置顶条目依规标注“广告”。</p>
+    <div class="filters" id="filters">
+      <button class="on" data-cat="全部">全部</button>
+      <button data-cat="餐饮美食">餐饮美食</button>
+      <button data-cat="生活服务">生活服务</button>
+      <button data-cat="教育培训">教育培训</button>
+      <button data-cat="医疗健康">医疗健康</button>
+      <button data-cat="休闲娱乐">休闲娱乐</button>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="biz-list" id="bizList"></div>
+    <div class="tip" style="margin-top:24px">
+      <b>想上榜？</b>基础收录免费。请到<a href="join.html">商家入驻</a>页提交信息，人工核实后随下一批次上线。
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="col">
+        <b>花桥生活指南</b>
+        <span>花桥.cn · 本地信息门户（静态站点）</span>
+      </div>
+      <div class="col">
+        <b>板块</b>
+        <a href="commute.html">通勤攻略</a>
+        <a href="directory.html">生活黄页</a>
+        <a href="join.html">商家入驻</a>
+      </div>
+      <div class="col">
+        <b>说明</b>
+        <a href="about.html">关于与合规</a>
+        <span>联系：hello@huacao.cn（占位邮箱）</span>
+      </div>
+    </div>
+    <div class="copyright">© 2026 花桥.cn · 本站内容仅供参考，商家信息以门店实际为准。</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 示例数据：条目名称、分类、一句话介绍、电话（占位）、是否置顶广告。
+  // 上线前由人工核验并替换为真实商家；付费置顶条目 feature=true。
+  var DATA = [
+    { name: "示例·花桥面馆", cat: "餐饮美食", desc: "示例条目：本地面馆，主打苏式汤面（待商家核实入驻）。", phone: "0512-0000 0001", feature: true },
+    { name: "示例·江南家常菜", cat: "餐饮美食", desc: "示例条目：家常菜馆，适合家庭聚餐（待商家核实入驻）。", phone: "0512-0000 0002", feature: false },
+    { name: "示例·花桥生鲜超市", cat: "生活服务", desc: "示例条目：社区生鲜超市，蔬果肉禽每日上新（待商家核实入驻）。", phone: "0512-0000 0003", feature: true },
+    { name: "示例·便民维修站", cat: "生活服务", desc: "示例条目：水电维修、家电清洗上门服务（待商家核实入驻）。", phone: "0512-0000 0004", feature: false },
+    { name: "示例·启航教育", cat: "教育培训", desc: "示例条目：中小学课后辅导与兴趣班（待商家核实入驻）。", phone: "0512-0000 0005", feature: false },
+    { name: "示例·花桥口腔诊所", cat: "医疗健康", desc: "示例条目：口腔检查、洁牙与基础治疗（待商家核实入驻）。", phone: "0512-0000 0006", feature: false },
+    { name: "示例·花桥影城", cat: "休闲娱乐", desc: "示例条目：多厅影院，含儿童厅（待商家核实入驻）。", phone: "0512-0000 0007", feature: false }
+  ];
+
+  var listEl = document.getElementById("bizList");
+  var filterEls = [].slice.call(document.querySelectorAll("#filters button"));
+  var current = "全部";
+
+  function render() {
+    var html = "";
+    DATA.forEach(function (b) {
+      if (current !== "全部" && b.cat !== current) return;
+      html += '<div class="biz' + (b.feature ? " featured" : "") + '">' +
+        '<div style="flex:1">' +
+        '<span class="tag">' + (b.feature ? "广告·置顶" : b.cat) + '</span>' +
+        '<h4>' + b.name + '</h4>' +
+        '<p>' + b.desc + '</p>' +
+        '<div class="phone">' + b.phone + '</div>' +
+        '</div></div>';
+    });
+    listEl.innerHTML = html || '<p class="small-note">该分类暂无条目，等待商家入驻。</p>';
+  }
+
+  filterEls.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      current = btn.getAttribute("data-cat");
+      filterEls.forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
